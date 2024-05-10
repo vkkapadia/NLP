@@ -13,7 +13,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 loader=WebBaseLoader("https://www.accuweather.com/en/in/surat/202441/current-weather/202441")
 docs=loader.load()
 documents=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200).split_documents(docs)
-vectordb=Chroma.from_documents(documents,OllamaEmbeddings(model="llama2:13b"))
+vectordb=Chroma.from_documents(documents,OllamaEmbeddings(model=os.getenv("OLLAMA_MODEL")))
 retriever=vectordb.as_retriever()
 
 
@@ -32,7 +32,7 @@ os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 from langchain_community.llms import Ollama
 ## Load Ollama LAMA2 LLM model
-llm=Ollama(model="llama2:13b")
+llm=Ollama(model=os.getenv("OLLAMA_MODEL"))
 
 from langchain import hub
 # Get the prompt to use - you can modify this!

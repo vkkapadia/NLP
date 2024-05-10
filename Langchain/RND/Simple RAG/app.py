@@ -20,7 +20,7 @@ documents=text_splitter.split_documents(docs)
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
 
-db = Chroma.from_documents(documents,OllamaEmbeddings(model="llama2:13b"))
+db = Chroma.from_documents(documents,OllamaEmbeddings(model=os.getenv("OLLAMA_MODEL")))
 
 query = "Why python is called an interpreted language?"
 retireved_results=db.similarity_search(query)

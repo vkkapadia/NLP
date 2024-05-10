@@ -11,3 +11,9 @@ sse_starlette
 pypdf
 chromadb
 wikipedia
+pywin32
+fitz
+frontend
+PyMuPDF
+sentence-transformers
+huggingface_hub

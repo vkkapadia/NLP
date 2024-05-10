@@ -19,7 +19,7 @@ app=FastAPI(
 
 )
 
-llm=Ollama(model="llama2:13b")
+llm=Ollama(model=os.getenv("OLLAMA_MODEL"))
 prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
 
 
