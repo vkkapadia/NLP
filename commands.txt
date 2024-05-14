@@ -1,0 +1,8 @@
+Activate local env
+conda activate C:\Projects\Learning\NLP\NLP\Langchain\condaenv
+
+Check All env 
+conda env list
+
+Create env
+conda create --prefix C:\Projects\Learning\NLP\NLP\Langchain\condaenv
